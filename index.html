@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <title>Selamat Ulang Tahun!!! 🎉</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+    <!-- Style -->
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- Audio Ucapan Selamat Ulang Tahun -->
+    <audio class="song" loop autoplay>
+        <source src="./lagu.mp3" type="audio/mpeg" />
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <div class="container">
+        <!-- Bagian Header -->
+        <header class="header">
+            <h1>Hai, <span id="name">Mepi Youmhy!</span></h1>
+            <p id="greetingText">Selamat ulang tahun! 🎂</p>
+        </header>
+
+        <!-- Pesan Spesial -->
+        <section class="message">
+            <div class="card">
+                <p class="hbd-message">
+                    Selamat ulang tahun sayangku, yang selalu membuat hariku lebih indah. Semoga kebahagiaan dan keceriaan
+                    selalu menyertaimu, Aamin, seperti yang kau bawa ke dalam hidupku. 💖
+                </p>
+                <button class="btn-send">I LOVE YOU SAYANGKU</button>
+            </div>
+        </section>
+
+        <!-- Video atau Gambar -->
+        <section class="video-section">
+            <video width="320" height="240" controls loop autoplay class="video-content">
+                <source src="./video.mp4" type="video/mp4" />
+                Browser Anda tidak mendukung elemen video.
+            </video>
+            <p class="wish">Semoga semua harapanmu terkabul! 🌟</p>
+        </section>
+
+        <!-- Dekorasi Balon -->
+        <section class="balloons">
+            <div class="balloon-container">
+                <img src="ballon1.svg" alt="Balon Ulang Tahun" />
+                <img src="ballon2.svg" alt="Balon Ulang Tahun" />
+                <img src="ballon3.svg" alt="Balon Ulang Tahun" />
+                <img src="ballon1.svg" alt="Balon Ulang Tahun" />
+                <img src="ballon2.svg" alt="Balon Ulang Tahun" />
+                <img src="ballon3.svg" alt="Balon Ulang Tahun" />
+            </div>
+        </section>
+
+        <!-- Bagian Replay -->
+        <section class="replay">
+            <p>Maaf kita yang sudh membuatkmu kecewa!.</p>
+        </section>
+    </div>
+
+    <!-- Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
+
