@@ -20,6 +20,64 @@ window.addEventListener('load', () => {
     });
 });
 
+document.querySelector('.btn-send').addEventListener('click', (e) => {
+    const button = e.target;
+    createFirework(button);
+});
+
+function createFirework(button) {
+    const fireworkContainer = document.createElement('div');
+    fireworkContainer.className = 'firework';
+    document.body.appendChild(fireworkContainer);
+
+    const shapes = ['❤️', '🎈', '🎈', '💥', '🌟']; // Bentuk love, balon, dan kembang api
+    for (let i = 0; i < 50; i++) {
+        const shape = document.createElement('div');
+        shape.textContent = shapes[i % shapes.length];
+        shape.style.position = 'absolute';
+        shape.style.left = `${Math.random() * 300 - 150}px`; // Lebihkan jarak untuk penyebaran lebih lebar
+        shape.style.top = `${Math.random() * 300 - 150}px`; // Lebihkan jarak untuk penyebaran lebih lebar
+        shape.style.animation = `explode 1.5s ease-out forwards`;
+        fireworkContainer.appendChild(shape);
+    }
+
+    // Menambahkan love di tengah
+    const love = document.createElement('div');
+    love.className = 'love';
+    love.textContent = '❤️';
+    fireworkContainer.appendChild(love);
+
+    // Menambahkan balon di tengah
+    const balloon1 = document.createElement('div');
+    balloon1.className = 'balloon';
+    balloon1.textContent = '🎈';
+    fireworkContainer.appendChild(balloon1);
+    
+    const balloon2 = document.createElement('div');
+    balloon2.className = 'balloon';
+    balloon2.textContent = '🎈';
+    fireworkContainer.appendChild(balloon2);
+
+    // Menambahkan efek kembang api (💥, 🎆)
+    const fireworks = ['💥', '🎆']; // Kembang api simbol
+    for (let i = 0; i < 30; i++) {
+        const firework = document.createElement('div');
+        firework.className = 'firework-item';
+        firework.textContent = fireworks[i % fireworks.length];
+        firework.style.left = `${Math.random() * 300 - 150}px`;
+        firework.style.top = `${Math.random() * 300 - 150}px`;
+        firework.style.fontSize = `${Math.random() * 20 + 15}px`; // Variasi ukuran
+        firework.style.animation = `explode 1.5s ease-out forwards`;
+        fireworkContainer.appendChild(firework);
+    }
+
+    // Set posisi di tombol
+    fireworkContainer.style.left = `${button.offsetLeft + button.offsetWidth / 2 - 50}px`;
+    fireworkContainer.style.top = `${button.offsetTop + button.offsetHeight / 2 - 50}px`;
+
+    // Menghapus efek setelah animasi selesai
+    setTimeout(() => fireworkContainer.remove(), 1500);
+}
 
 
 
