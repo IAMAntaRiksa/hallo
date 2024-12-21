@@ -25,7 +25,7 @@
     <div class="container">
         <!-- Bagian Header -->
         <header class="header">
-            <h1>Hai, <span id="name">Mepi Youmhy!</span></h1>
+            <h1>Hai, <span id="name">Mepi Youmhy</span></h1>
             <p id="greetingText">Selamat ulang tahun! ke 24 🎂</p>
         </header>
 
@@ -40,14 +40,29 @@
             </div>
         </section>
 
-        <!-- Video atau Gambar -->
         <section class="video-section">
-            <video width="320" height="240" controls loop autoplay class="video-content">
+            <!-- Video pertama yang muncul pertama kali -->
+            <video id="video1" width="320" height="240" controls loop autoplay class="video-content">
                 <source src="./video.mp4" type="video/mp4" />
                 Browser Anda tidak mendukung elemen video.
             </video>
-            <p class="wish">Semoga semua harapanmu terkabul! 🌟</p>
+
+  
+        
+            <!-- Teks yang muncul saat video pertama diputar -->
+            <p id="videoText" class="wish">Semoga semua harapanmu terkabul! 🌟</p>
+        
+            <!-- Video kedua yang muncul setelah video pertama selesai -->
+            <video id="video2" width="320" height="240" controls class="video-content" style="display:none;">
+                <source src="./video1.mp4" type="video/mp4" />
+                Browser Anda tidak mendukung elemen video.
+            </video>
+
+                      <!-- Tombol untuk berganti video -->
+            <button class="slide-toggle">Next Video</button>
+        
         </section>
+        
 
         <!-- Dekorasi Balon -->
         <section class="balloons">
@@ -58,12 +73,13 @@
                 <img src="ballon1.svg" alt="Balon Ulang Tahun" />
                 <img src="ballon2.svg" alt="Balon Ulang Tahun" />
                 <img src="ballon3.svg" alt="Balon Ulang Tahun" />
+                <img src="ballon3.svg" alt="Balon Ulang Tahun" />
             </div>
         </section>
 
         <!-- Bagian Replay -->
         <section class="replay">
-            <p>Maaf kita yang sudh membuatkmu kecewa!.</p>
+            <p>Maaf kita yang sering membuat kmu kecewa!!!</p>
         </section>
     </div>
 

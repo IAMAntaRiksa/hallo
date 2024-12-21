@@ -79,6 +79,55 @@ function createFirework(button) {
     setTimeout(() => fireworkContainer.remove(), 1500);
 }
 
+// Ambil elemen video, audio, teks dan tombol slide
+const video1 = document.getElementById('video1');
+const video2 = document.getElementById('video2');
+const audio = document.querySelector('.song');
+const slideButton = document.querySelector('.slide-toggle');
+const videoText = document.getElementById('videoText');
+
+// Flag untuk melacak status video (apakah video pertama atau kedua yang sedang ditampilkan)
+let isVideo1Visible = true;
+
+// Event listener untuk tombol slide (klik tombol)
+slideButton.addEventListener('click', () => {
+    if (isVideo1Visible) {
+        // Jika video pertama sedang ditampilkan, sembunyikan dan tampilkan video kedua
+        video1.style.display = 'none';
+        video2.style.display = 'block';
+
+        // Sembunyikan teks
+        videoText.style.display = 'none';
+
+        // Hentikan audio
+        audio.pause();
+
+        // Putar video kedua
+        video2.play();
+    } else {
+        // Jika video kedua sedang ditampilkan, sembunyikan dan tampilkan video pertama
+        video2.style.display = 'none';
+        video1.style.display = 'block';
+
+        // Tampilkan teks
+        videoText.style.display = 'block';
+
+        // Putar ulang audio
+        audio.play();
+
+        // Putar video pertama
+        video1.play();
+    }
+
+    // Toggle status video
+    isVideo1Visible = !isVideo1Visible;
+});
+
+// Event listener untuk memulai pemutaran video kedua setelah video pertama selesai
+video1.addEventListener('ended', () => {
+    // Setelah video pertama selesai, sembunyikan teks dan biarkan tombol slide aktif
+    videoText.style.display = 'none';
+});
 
 
 // animation timeline
